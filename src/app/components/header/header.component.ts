@@ -12,8 +12,8 @@ export class HeaderComponent implements OnInit {
   showAddTask: boolean = false;
   subscription: Subscription = new Subscription;
 
-  constructor(private uiSevice: UiService) {
-    this.subscription = this.uiSevice.onToggle().subscribe(
+  constructor(private uiService: UiService) {
+    this.subscription = this.uiService.onToggle().subscribe(
         value => this.showAddTask = value
       );
   }
@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleAddTask() {
-    this.uiSevice.toggleAddTask();
+    this.uiService.toggleAddTask();
   }
 
 }
